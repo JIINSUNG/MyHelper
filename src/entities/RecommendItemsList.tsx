@@ -78,7 +78,7 @@ const RecommendItemsList: React.FC = () => {
 		if (optimalCombinations.length > 0) {
 			setRecommendList(optimalCombinations);
 		} else {
-			console.log('조합을 찾을 수 없습니다.');
+			alert('해당 품목으로 조합을 찾을 수 없습니다.');
 		}
 	};
 

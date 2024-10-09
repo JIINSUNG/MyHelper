@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MenuButton } from '@/app/shared';
+import { MenuButton } from '../shared';
 
 const MenuSelection: React.FC = () => {
 	return (
@@ -13,7 +13,12 @@ const MenuSelection: React.FC = () => {
 				</Link>
 				<Link href="/gifticon">
 					<li>
-						<MenuButton content="헬퍼" link="gifticon" />
+						<MenuButton content="깊티 헬퍼" link="gifticon" />
+					</li>
+				</Link>
+				<Link href="/discount">
+					<li>
+						<MenuButton content="할인율 계산기" link="discount" />
 					</li>
 				</Link>
 			</ul>
