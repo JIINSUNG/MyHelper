@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Helper
 
-## Getting Started
+---
 
-First, run the development server:
+## 0. Introduce
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- My Helper는 일상 생활 중 있으면 좋을것 같은데 라고 막연하게 생각했던 것들을 기능으로 만든 유틸리티 페이지입니다.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 1. Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next14
+- Tailwind CSS
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 2. Feature
 
-## Learn More
+- 기프티콘 사용 시 최적 조합 메이커
+    - 기프티콘 사용하거나 할인을 받아 구매 시 최적의 조합을 찾아주는 기능입니다
+    - 예시 케이스
+        - 12700원짜리 스타벅스 기프티콘을 사용하고자 할때
+            - 60% (약 7600원) 사용시 환불 가능
+            - 아메리카노가 4500원, 마카롱이 2300원, 샌드위치가 4400원일때
+            - 최적의 조합은 샌드위치1 + 마카롱 1 같이 알려주는 기능
+        - 30% 할인쿠폰이 있고, 기프티콘이 3900원 짜리가 있을때
+            - 5572원 이상 물건을 구매 해야 기프티콘을 온전히 사용 가능
+            - 아메리카노가 2000원, 햄버거가 3800원, 쿠키가 2200원 있을때
+                - 아메리카노1 + 햄버거 1을 구매하는 조합이 최적
+- 앞으로 더 많은 기능이 추가 될 예정입니다…
 
-To learn more about Next.js, take a look at the following resources:
+## 3. Optimization Point
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 최적화 적용시 반영될 예정입니다
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 4. log
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- v0.0.1 24.10.09
+    - 기프티콘 최적 조합 기능 최초 릴리즈
