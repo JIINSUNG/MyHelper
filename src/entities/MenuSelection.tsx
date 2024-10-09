@@ -5,7 +5,7 @@ import { MenuButton } from '../shared';
 const MenuSelection: React.FC = () => {
 	return (
 		<nav>
-			<ul className="flex gap-4 justify-center">
+			<ul className="flex w-full flex-wrap gap-4 justify-center whitespace-nowrap">
 				<Link href="/">
 					<li>
 						<MenuButton content="홈" />
@@ -19,6 +19,11 @@ const MenuSelection: React.FC = () => {
 				<Link href="/discount">
 					<li>
 						<MenuButton content="할인율 계산기" link="discount" />
+					</li>
+				</Link>
+				<Link href="/ajegag">
+					<li>
+						<MenuButton content="아재 개그" link="ajegag" />
 					</li>
 				</Link>
 			</ul>
