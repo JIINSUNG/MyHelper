@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './fonts/pretendard.css';
 import { Footer, Header } from '@/widgets';
-import { MenuSelection } from '@/app/entities';
+import { MenuSelection } from '@/entities';
 
 export const metadata: Metadata = {
 	title: 'Help Me',
