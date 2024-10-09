@@ -2,11 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { MenuButton } from '@/app/shared';
 
-export type MenuSelectionProps = {
-	className?: string;
-};
-
-const MenuSelection: React.FC<MenuSelectionProps> = ({ className }) => {
+const MenuSelection: React.FC = () => {
 	return (
 		<nav>
 			<ul className="flex gap-4 justify-center">
