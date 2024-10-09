@@ -3,27 +3,25 @@ import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { usePriceContext } from '@/app/context/PriceContext';
 
-export type RecommendItemsListProps = {
-	className?: string;
+type Item = {
+	name: string;
+	price: number;
+	quantity: number;
 };
 
-const RecommendItemsList: React.FC<RecommendItemsListProps> = ({
-	className,
-}) => {
+type Combination = {
+	total: number;
+	pairs: {
+		name: string;
+		quantity: number;
+	}[];
+};
+
+const RecommendItemsList: React.FC = () => {
 	const { minPrice } = usePriceContext();
-	const [itemList, setItemList] = useState<
-		{ name: string; price: number; quantity: number }[]
-	>([]);
+	const [itemList, setItemList] = useState<Item[]>([]);
 	const [editMode, setEditMode] = useState<boolean>(false);
-	const [recommendList, setRecommendList] = useState<
-		{
-			total: number;
-			pairs: {
-				name: string;
-				quantity: number;
-			}[];
-		}[]
-	>([]);
+	const [recommendList, setRecommendList] = useState<Combination[]>([]);
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -40,16 +38,15 @@ const RecommendItemsList: React.FC<RecommendItemsListProps> = ({
 		]);
 
 		setEditMode(false);
-		// 폼 필드 초기화
 		e.currentTarget.reset();
 	};
 
 	const handleCalculate = () => {
-		const combinations: any[] = [];
+		const combinations: Combination[] = [];
 
 		const createCombinations = (
 			startIndex: number,
-			currentCombination: any[],
+			currentCombination: { name: string; quantity: number }[],
 			currentTotal: number,
 		) => {
 			if (currentTotal >= minPrice) {
@@ -74,7 +71,6 @@ const RecommendItemsList: React.FC<RecommendItemsListProps> = ({
 		createCombinations(0, [], 0);
 
 		const minTotal = Math.min(...combinations.map((c) => c.total));
-
 		const optimalCombinations = combinations.filter(
 			(c) => c.total === minTotal,
 		);
