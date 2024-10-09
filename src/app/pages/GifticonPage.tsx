@@ -6,12 +6,10 @@ import { PriceContextProvider } from '@/app/context/PriceContext';
 
 const GifticonPage: React.FC = () => {
 	return (
-		<>
-			<PriceContextProvider>
-				<GifticonCalculator />
-				<RecommendItemsList />
-			</PriceContextProvider>
-		</>
+		<PriceContextProvider>
+			<GifticonCalculator />
+			<RecommendItemsList />
+		</PriceContextProvider>
 	);
 };
 
