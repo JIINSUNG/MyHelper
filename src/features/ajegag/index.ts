@@ -1,0 +1,1 @@
+export { AjegagGenerator } from './components';

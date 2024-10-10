@@ -1,0 +1,1 @@
+export { DiscountCalculator } from './component';
