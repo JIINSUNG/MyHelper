@@ -1,11 +1,11 @@
 import React from 'react';
-import { DiscountCalculator } from '@/entities';
+import { AjegagGenerator } from '@/features/ajegag';
 
 const page: React.FC = () => {
 	return (
 		<main className="flex flex-col w-full items-center gap-4">
-			<h1 className="text-2xl font-bold">할인 가격(율) 계산기</h1>
-			<DiscountCalculator />
+			<h1 className="text-2xl font-bold">아재 개그 코너</h1>
+			<AjegagGenerator />
 		</main>
 	);
 };

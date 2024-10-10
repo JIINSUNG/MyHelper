@@ -1,16 +1,17 @@
 'use client';
 
 import React, { useState } from 'react';
-import data from '@/shared/ajegag.json';
+import { data } from '@/entities/ajegag';
+import type { AjegagType } from '@/entities/ajegag';
 
-const AjeGag: React.FC = () => {
+const AjegagGenerator: React.FC = () => {
 	const [random, setRandom] = useState<number>(-1);
 	const [open, setOpen] = useState<boolean>(false);
 	const handleButton = () => {
 		setRandom(Math.floor(Math.random() * data.length));
 		setOpen(false);
 	};
-	const randomItem = data[random]; // 랜덤 항목 설정
+	const randomItem: AjegagType = data[random]; // 랜덤 항목 설정
 
 	return (
 		<section className="flex flex-col items-center gap-8">
@@ -49,4 +50,4 @@ const AjeGag: React.FC = () => {
 	);
 };
 
-export default AjeGag;
+export default AjegagGenerator;

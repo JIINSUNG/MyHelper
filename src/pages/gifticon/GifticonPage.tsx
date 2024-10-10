@@ -1,14 +1,14 @@
-'use client';
 import React from 'react';
-import { GifticonCalculator } from '@/entities';
-import { RecommendItemsList } from '@/entities';
+import { GifticonCalculator, RecommendItemsList } from '@/features/gifticon';
 import { PriceContextProvider } from '@/app/context/PriceContext';
 
 const GifticonPage: React.FC = () => {
 	return (
 		<PriceContextProvider>
-			<GifticonCalculator />
-			<RecommendItemsList />
+			<main className="flex flex-col w-full md:p-4">
+				<GifticonCalculator />
+				<RecommendItemsList />
+			</main>
 		</PriceContextProvider>
 	);
 };
