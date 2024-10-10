@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { usePriceContext } from '@/app/context/PriceContext';
+import InputModal from '@/shared/component/InputModal';
+import Input from '@/shared/component/Input';
 
 type Item = {
 	name: string;
@@ -166,42 +168,16 @@ const RecommendItemsList: React.FC = () => {
 				</tbody>
 			</table>
 			{editMode && (
-				<div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-					<form
-						className="bg-white p-10 rounded-md shadow-md w-[400px]"
-						onSubmit={handleSubmit}
-					>
-						<input
-							type="text"
-							className="rounded-md border border-black px-2 py-4 mb-2 w-full"
-							placeholder="물품명"
-							name="name"
-						/>
-						<input
-							type="number"
-							className="rounded-md border border-black px-2 py-4 mb-2 w-full"
-							placeholder="물품가격"
-							name="price"
-						/>
-						<input
-							type="number"
-							className="rounded-md border border-black px-2 py-4 mb-2 w-full"
-							placeholder="물품 개수"
-							name="quantity"
-						/>
-						<div className="flex gap-2">
-							<button className="mt-4 bg-blue-500 text-white rounded-md px-4 py-2">
-								추가
-							</button>
-							<button
-								className="mt-4 bg-red-500 text-white rounded-md px-4 py-2"
-								onClick={() => setEditMode(false)}
-							>
-								취소
-							</button>
-						</div>
-					</form>
-				</div>
+				<InputModal
+					isOpen={editMode}
+					onClose={() => setEditMode(false)}
+					onSubmit={handleSubmit}
+					label="물품 추가"
+				>
+					<Input type="text" placeholder="물품명" name="name" />
+					<Input type="number" placeholder="물품가격" name="price" />
+					<Input type="number" placeholder="물품 개수" name="quantity" />
+				</InputModal>
 			)}
 		</section>
 	);
