@@ -1,0 +1,1 @@
+export { SelectGenerator } from './component';
