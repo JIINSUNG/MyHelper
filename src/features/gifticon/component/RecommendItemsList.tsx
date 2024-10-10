@@ -2,8 +2,7 @@
 import React, { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { usePriceContext } from '@/app/context/PriceContext';
-import InputModal from '@/shared/component/InputModal';
-import Input from '@/shared/component/Input';
+import { InputModal, Input } from '@/shared/component/';
 
 type Item = {
 	name: string;

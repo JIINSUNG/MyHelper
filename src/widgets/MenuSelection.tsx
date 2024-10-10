@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MenuButton } from '../shared';
+import { MenuButton } from '@/shared/component';
 
 const MenuSelection: React.FC = () => {
 	return (

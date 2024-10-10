@@ -1,9 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import InputModal from '@/shared/component/InputModal';
-import Input from '@/shared/component/Input';
-import Card from '@/shared/component/Card';
+import { InputModal, Input, Card } from '@/shared/component/';
 
 type selectType = {
 	title: string;
