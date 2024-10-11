@@ -47,9 +47,9 @@ const DiscountCalculator: React.FC = () => {
 
 			{isRate ? (
 				<div className="flex flex-col w-full items-center gap-1">
-					<h2 className="font-bold">할인율 계산기</h2>
+					<h2 className="font-bold py-4">할인율 계산기</h2>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">정가</span>
+						<span className="w-[120px]">정가</span>
 						<input
 							type="number"
 							className="px-2 py-1 border border-gray-300"
@@ -57,7 +57,7 @@ const DiscountCalculator: React.FC = () => {
 						/>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">결제한 금액</span>
+						<span className="w-[120px]">결제한 금액</span>
 						<input
 							type="number"
 							className="px-2 py-1 border border-gray-300"
@@ -65,13 +65,13 @@ const DiscountCalculator: React.FC = () => {
 						/>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">할인 받은 금액</span>
+						<span className="w-[120px]">할인 받은 금액</span>
 						<div className="w-[195px] px-2 py-1 border border-gray-300">
 							{originalPrice - discountPrice}
 						</div>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">할인 율 (%)</span>
+						<span className="w-[120px]">할인 율 (%)</span>
 						<div className="w-[195px] px-2 py-1 border border-gray-300">
 							{rate.toFixed(2)}
 						</div>
@@ -79,9 +79,9 @@ const DiscountCalculator: React.FC = () => {
 				</div>
 			) : (
 				<div className="flex flex-col w-full items-center gap-1">
-					<h2 className="font-bold">할인 가격 계산기</h2>
+					<h2 className="font-bold  py-4">할인 가격 계산기</h2>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">정가</span>
+						<span className="w-[120px]">정가</span>
 						<input
 							type="number"
 							className="px-2 py-1 border border-gray-300"
@@ -89,7 +89,7 @@ const DiscountCalculator: React.FC = () => {
 						/>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">할인 율 (%)</span>
+						<span className="w-[120px]">할인 율 (%)</span>
 						<input
 							type="number"
 							className="px-2 py-1 border border-gray-300"
@@ -97,13 +97,13 @@ const DiscountCalculator: React.FC = () => {
 						/>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">할인 금액</span>
+						<span className="w-[120px]">할인 금액</span>
 						<div className="w-[195px] px-2 py-1 border border-gray-300">
 							{discountPrice.toFixed(0)}
 						</div>
 					</label>
 					<label className="flex gap-2 items-center">
-						<span className="w-[80px]">결제 금액</span>
+						<span className="w-[120px]">결제 금액</span>
 						<div className="w-[195px] px-2 py-1 border border-gray-300">
 							{originalPrice - discountPrice}
 						</div>
