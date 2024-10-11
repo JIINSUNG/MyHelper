@@ -4,33 +4,33 @@ import { MenuButton } from '@/shared/component';
 
 const MenuSelection: React.FC = () => {
 	return (
-		<nav>
-			<ul className="flex w-full flex-wrap gap-4 justify-center whitespace-nowrap">
-				<Link href="/">
-					<li>
+		<nav className="flex p-4 gap-4 overflow-x-auto">
+			<ul className="flex gap-4 mx-auto whitespace-nowrap">
+				<li>
+					<Link href="/">
 						<MenuButton content="홈" />
-					</li>
-				</Link>
-				<Link href="/gifticon">
-					<li>
+					</Link>
+				</li>
+				<li>
+					<Link href="/gifticon">
 						<MenuButton content="깊티 헬퍼" link="gifticon" />
-					</li>
-				</Link>
-				<Link href="/discount">
-					<li>
+					</Link>
+				</li>
+				<li>
+					<Link href="/discount">
 						<MenuButton content="할인율 계산기" link="discount" />
-					</li>
-				</Link>
-				<Link href="/ajegag">
-					<li>
+					</Link>
+				</li>
+				<li>
+					<Link href="/ajegag">
 						<MenuButton content="아재 개그" link="ajegag" />
-					</li>
-				</Link>
-				<Link href="/selector">
-					<li>
+					</Link>
+				</li>
+				<li>
+					<Link href="/selector">
 						<MenuButton content="결정 헬퍼" link="selector" />
-					</li>
-				</Link>
+					</Link>
+				</li>
 			</ul>
 		</nav>
 	);
