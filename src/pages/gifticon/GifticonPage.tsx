@@ -5,7 +5,7 @@ import { PriceContextProvider } from '@/app/context/PriceContext';
 const GifticonPage: React.FC = () => {
 	return (
 		<PriceContextProvider>
-			<main className="flex flex-col w-full md:p-4">
+			<main className="flex flex-col w-full md:p-4 whitespace-nowrap">
 				<GifticonCalculator />
 				<RecommendItemsList />
 			</main>
