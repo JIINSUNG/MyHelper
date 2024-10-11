@@ -15,10 +15,12 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="ko">
-			<body className="min-w-[360px] font-pretendard flex flex-col bg-gray-100 xl:p-6 gap-4 max-xl:w-full xl:mx-auto xl:max-w-screen-xl">
+			<body className="min-w-[360px] font-pretendard flex flex-col bg-gray-100 gap-10">
 				<Header />
 				<MenuSelection />
-				{children}
+				<section className="xl:p-6 gap-4 max-md:w-full md:mx-auto max-w-screen-xl">
+					{children}
+				</section>
 				<Footer />
 			</body>
 		</html>
