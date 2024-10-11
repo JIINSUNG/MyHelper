@@ -6,8 +6,8 @@ export type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = () => {
 	return (
-		<header>
-			<p className="text-center">JIINSUNG</p>
+		<header className="flex justify-center p-10 max-md:p-5 bg-gray-200">
+			<p className="text-3xl max-md:text-xl text-center">Help Me</p>
 		</header>
 	);
 };
