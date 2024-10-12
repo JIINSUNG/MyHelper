@@ -4,7 +4,7 @@ import { MenuButton } from '@/shared/component';
 
 const MenuSelection: React.FC = () => {
 	return (
-		<nav className="flex p-4 gap-4 overflow-x-auto">
+		<nav className="flex p-8 gap-4 overflow-x-auto">
 			<ul className="flex gap-4 mx-auto whitespace-nowrap">
 				<li>
 					<Link href="/">
@@ -29,6 +29,11 @@ const MenuSelection: React.FC = () => {
 				<li>
 					<Link href="/selector">
 						<MenuButton content="결정 헬퍼" link="selector" />
+					</Link>
+				</li>
+				<li>
+					<Link href="/anniversary">
+						<MenuButton content="기념일 헬퍼" link="anniversary" />
 					</Link>
 				</li>
 			</ul>
