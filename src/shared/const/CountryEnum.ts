@@ -111,4 +111,5 @@ export const languageNames: { [key: string]: string } = {
 	ron: '루마니아어',
 	nob: '노르웨이 보크어',
 	fil: '필리핀어',
+	msa: '말레이시아어',
 };
