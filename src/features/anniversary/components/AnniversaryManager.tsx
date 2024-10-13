@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useState } from 'react';
-import { Input, InputModal } from '@/shared/component';
+import { Button, Input, InputModal } from '@/shared/component';
 import AnniversaryCard from './AnniversaryCard';
 import dayjs from 'dayjs';
 
@@ -57,12 +57,7 @@ const AnniversaryManager: React.FC = () => {
 
 	return (
 		<section className="flex flex-col gap-4 items-center w-full">
-			<button
-				onClick={() => setIsOpen(true)}
-				className="border border-black rounded-md px-2 py-1 bg-blue-300"
-			>
-				기념일 등록하기
-			</button>
+			<Button onClick={() => setIsOpen(true)} label="기념일 등록" />
 			<div className="flex flex-col items-center w-full max-md:px-5 md:px-10 gap-4">
 				{anniversaryList?.map((anniversary: anniversaryType, index) => (
 					<AnniversaryCard

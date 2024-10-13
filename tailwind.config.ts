@@ -15,6 +15,11 @@ const config: Config = {
 			colors: {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
+				darkPurple: '#242038',
+				slateBlue: '#725AC1',
+				indigo: '#8D86C9',
+				frenchGray: '#CAC4CE',
+				linen: '#F7ECE1',
 			},
 			rotate: {
 				'180': '180deg',

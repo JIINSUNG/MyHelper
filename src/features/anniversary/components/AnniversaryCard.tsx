@@ -4,6 +4,7 @@ import React from 'react';
 import { twMerge } from 'tailwind-merge';
 import type { anniversaryType } from './AnniversaryManager';
 import dayjs from 'dayjs';
+import { Button } from '@/shared/component';
 
 export type AnniversaryCardProps = {
 	className?: string;
@@ -33,12 +34,7 @@ const AnniversaryCard: React.FC<AnniversaryCardProps> = ({
 				<span>{anniversary.date}</span>
 			</div>
 			<div className="flex flex-col items-end justify-between">
-				<button
-					className="border text-center bg-red-300 border-black rounded-md px-2 py-1"
-					onClick={() => deleteHandle(idx)}
-				>
-					삭제
-				</button>
+				<Button onClick={() => deleteHandle(idx)} label="삭제" color="warn" />
 				<span>
 					{daysDiff >= 365 && Math.floor(daysDiff / 365) + '년하고 '}
 					{daysDiff < 0 ? 'D' : 'D+'}

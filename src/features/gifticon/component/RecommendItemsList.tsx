@@ -1,8 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { usePriceContext } from '@/app/context/PriceContext';
 import { InputModal, Input } from '@/shared/component/';
+import { Button } from '@/shared/component';
 
 type Item = {
 	name: string;
@@ -90,15 +90,12 @@ const RecommendItemsList: React.FC = () => {
 					<tr className="flex justify-between w-full border-b border-black">
 						<th className="flex items-center justify-center gap-2 w-1/2 py-2">
 							<p>구매품목</p>
-							<button
-								className={twMerge(
-									'rounded-full bg-blue-300 w-8 h-8',
-									editMode && 'bg-red-300 animate-pulse',
-								)}
+							<Button
+								label={editMode ? '-' : '+'}
+								color={editMode ? 'warn' : 'slateBlue'}
 								onClick={() => setEditMode((mode) => !mode)}
-							>
-								{editMode ? '-' : '+'}
-							</button>
+								shape="circle"
+							></Button>
 						</th>
 						<th className="flex items-center justify-center border-l border-black gap-2 w-1/2 py-2">
 							추천품목
@@ -116,12 +113,7 @@ const RecommendItemsList: React.FC = () => {
 						</td>
 						<td className="flex w-full border-l border-black">
 							<div className="flex w-full justify-center py-2">
-								<button
-									className="px-2 py-1 rounded-md bg-blue-300"
-									onClick={handleCalculate}
-								>
-									계산하기
-								</button>
+								<Button label={'계산하기'} onClick={handleCalculate} />
 							</div>
 						</td>
 					</tr>

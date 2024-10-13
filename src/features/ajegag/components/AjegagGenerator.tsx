@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { data } from '@/entities/ajegag';
 import type { AjegagType } from '@/entities/ajegag';
+import { Button } from '@/shared/component';
 
 const AjegagGenerator: React.FC = () => {
 	const [random, setRandom] = useState<number>(-1);
@@ -16,12 +17,10 @@ const AjegagGenerator: React.FC = () => {
 	return (
 		<section className="flex flex-col items-center gap-8">
 			<div>
-				<button
-					className="px-2 py-1 border border-black rounded-md bg-blue-300"
+				<Button
 					onClick={() => handleButton()}
-				>
-					{random === -1 ? '아재 개그 생성' : '셔플'}
-				</button>
+					label={random === -1 ? '아재 개그 생성' : '셔플하기'}
+				/>
 			</div>
 			{random !== -1 && (
 				<div className="flex flex-col gap-10 items-center">
@@ -36,12 +35,11 @@ const AjegagGenerator: React.FC = () => {
 								정답 : {randomItem.answer}
 							</span>
 						) : (
-							<button
-								className="px-2 py-1 border border-black rounded-md"
+							<Button
+								color="frenchGray"
 								onClick={() => setOpen(true)}
-							>
-								정답 보기
-							</button>
+								label={'정답 보기'}
+							/>
 						)}
 					</div>
 				</div>

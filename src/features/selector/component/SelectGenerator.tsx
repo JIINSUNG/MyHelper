@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { InputModal, Input, Card } from '@/shared/component/';
+import { Button } from '@/shared/component';
 
 type selectType = {
 	title: string;
@@ -52,28 +53,13 @@ const SelectGenerator: React.FC = () => {
 			<div className="flex flex-col items-center">
 				<div className="flex w-full border border-black rounded-md mb-4">
 					<div className="p-4">
-						<button
-							className="px-2 py-1 border border-black rounded-md bg-blue-200"
-							onClick={() => setIsOpen(true)}
-						>
-							추가하기
-						</button>
+						<Button onClick={() => setIsOpen(true)} label={'추가하기'} />
 					</div>
 					<div className="p-4 border-l border-black">
-						<button
-							className="px-2 py-1 border border-black rounded-md bg-blue-200"
-							onClick={() => handleSelect()}
-						>
-							추첨하기
-						</button>
+						<Button onClick={() => handleSelect()} label="추첨하기" />
 					</div>
 					<div className="p-4 border-l border-black">
-						<button
-							className="px-2 py-1 border border-black rounded-md bg-red-200"
-							onClick={() => handleClear()}
-						>
-							클리어
-						</button>
+						<Button color="warn" onClick={() => handleClear()} label="클리어" />
 					</div>
 				</div>
 			</div>

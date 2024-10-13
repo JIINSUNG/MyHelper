@@ -6,6 +6,7 @@ import { MovieCard } from '@/features/streaming/components';
 import { useDebounce } from '@/shared/hooks';
 import { MovieType } from '@/features/streaming/components/MovieCard';
 import { useRouter } from 'next/navigation';
+import { Button } from '@/shared/component';
 
 export type MovieSelectorProps = {
 	className?: string;
@@ -75,18 +76,12 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 				{/* TODO: 스트리밍 검색 API 연결 */}
 				{movie && (
 					<div className="flex flex-col w-[60px] gap-2">
-						<button
-							className="whitespace-nowrap border border-black rounded-md px-2 py-1 bg-blue-300"
-							onClick={() => handleSearch()}
-						>
-							검색
-						</button>
-						<button
-							className="whitespace-nowrap border border-black rounded-md px-2 py-1 bg-red-300"
+						<Button onClick={() => handleSearch()} label="검색" />
+						<Button
 							onClick={() => handleRemove()}
-						>
-							초기화
-						</button>
+							label="초기화"
+							color="warn"
+						/>
 					</div>
 				)}
 			</div>
