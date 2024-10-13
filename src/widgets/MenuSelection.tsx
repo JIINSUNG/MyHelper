@@ -36,6 +36,11 @@ const MenuSelection: React.FC = () => {
 						<MenuButton content="기념일 헬퍼" link="anniversary" />
 					</Link>
 				</li>
+				<li>
+					<Link href="/streaming">
+						<MenuButton content="스트리밍 헬퍼" link="streaming" />
+					</Link>
+				</li>
 			</ul>
 		</nav>
 	);
