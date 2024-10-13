@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MenuButton } from '@/shared/component';
+import { LinkButton } from '@/shared/component';
 
 const MenuSelection: React.FC = () => {
 	return (
@@ -8,37 +8,37 @@ const MenuSelection: React.FC = () => {
 			<ul className="flex gap-4 mx-auto whitespace-nowrap">
 				<li>
 					<Link href="/">
-						<MenuButton content="홈" />
+						<LinkButton content="홈" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/gifticon">
-						<MenuButton content="깊티 헬퍼" link="gifticon" />
+						<LinkButton content="깊티 헬퍼" link="gifticon" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/discount">
-						<MenuButton content="할인율 계산기" link="discount" />
+						<LinkButton content="할인율 계산기" link="discount" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/ajegag">
-						<MenuButton content="아재 개그" link="ajegag" />
+						<LinkButton content="아재 개그" link="ajegag" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/selector">
-						<MenuButton content="결정 헬퍼" link="selector" />
+						<LinkButton content="결정 헬퍼" link="selector" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/anniversary">
-						<MenuButton content="기념일 헬퍼" link="anniversary" />
+						<LinkButton content="기념일 헬퍼" link="anniversary" />
 					</Link>
 				</li>
 				<li>
 					<Link href="/streaming">
-						<MenuButton content="스트리밍 헬퍼" link="streaming" />
+						<LinkButton content="스트리밍 헬퍼" link="streaming" />
 					</Link>
 				</li>
 			</ul>
