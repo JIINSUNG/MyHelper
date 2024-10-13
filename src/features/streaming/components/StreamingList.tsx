@@ -68,7 +68,11 @@ const StreamingList: React.FC<StreamingListProps> = ({ className }) => {
 	return (
 		<section className={twMerge('flex flex-col w-full gap-4 px-5', className)}>
 			<h1 className="font-bold text-center">
-				{countries.length > 0 ? '시청 가능 국가' : '시청 가능 국가가 없습니다.'}
+				{!streamingInfo
+					? '영화 선택 후 검색 버튼을 눌러 주세요'
+					: countries.length > 0
+						? '시청 가능 국가'
+						: '시청 가능 국가가 없습니다.'}
 			</h1>
 			{countries.length > 0 && (
 				<ul className="flex flex-col w-full gap-2">
