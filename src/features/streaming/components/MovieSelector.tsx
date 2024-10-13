@@ -14,7 +14,7 @@ export type MovieSelectorProps = {
 const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 	const [query, setQuery] = useState('');
 	const [movieList, setMovieList] = useState([]);
-	const [movie, setMovie] = useState<MovieType>();
+	const [movie, setMovie] = useState<MovieType | null>(null);
 	const router = useRouter();
 
 	const debouncedQuery = useDebounce(query, 500);
@@ -38,16 +38,28 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 		router.push(`/streaming?id=${movie.id}`);
 	};
 
+	const handleRemove = () => {
+		setMovie(null);
+		setMovieList([]);
+	};
+
 	return (
 		<section className={twMerge('flex flex-col', className)}>
 			<div className="flex items-start gap-2">
-				<div className="flex flex-col min-w-[300px] mx-2">
-					<input
-						type="text"
-						placeholder="제목으로 검색"
-						className="border border-black px-2 py-1 rounded-md"
-						onChange={(e) => setQuery(e.target.value)}
-					/>
+				<div className="flex flex-col w-[300px]">
+					{!movie ? (
+						<input
+							type="text"
+							placeholder="제목으로 검색"
+							className="border border-black px-2 py-1 rounded-md"
+							onChange={(e) => setQuery(e.target.value)}
+						/>
+					) : (
+						<div className="border border-black px-2 py-1 rounded-md">
+							선택 영화 : {movie.title}
+						</div>
+					)}
+
 					{movieList?.map((movie, idx) => (
 						<MovieCard
 							className="cursor-pointer"
@@ -61,12 +73,22 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 					))}
 				</div>
 				{/* TODO: 스트리밍 검색 API 연결 */}
-				<button
-					className="whitespace-nowrap border border-black rounded-md px-2 py-1 bg-blue-300"
-					onClick={() => handleSearch()}
-				>
-					검색
-				</button>
+				{movie && (
+					<div className="flex flex-col w-[60px] gap-2">
+						<button
+							className="whitespace-nowrap border border-black rounded-md px-2 py-1 bg-blue-300"
+							onClick={() => handleSearch()}
+						>
+							검색
+						</button>
+						<button
+							className="whitespace-nowrap border border-black rounded-md px-2 py-1 bg-red-300"
+							onClick={() => handleRemove()}
+						>
+							초기화
+						</button>
+					</div>
+				)}
 			</div>
 		</section>
 	);
