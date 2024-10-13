@@ -21,7 +21,7 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 
 	const getMovieList = async (query: string) => {
 		const response = await fetch(
-			`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=ko-KR`,
+			`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie?query=${query}&api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=ko-KR`,
 		).then((response) => response.json());
 
 		setMovieList(response.results);
@@ -67,7 +67,6 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 				>
 					검색
 				</button>
-				{/*	선택 버튼*/}
 			</div>
 		</section>
 	);
