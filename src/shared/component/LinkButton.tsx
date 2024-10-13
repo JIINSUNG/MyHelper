@@ -10,7 +10,7 @@ export type MenuButtonProps = {
 	link?: string | null;
 };
 
-const MenuButton: React.FC<MenuButtonProps> = ({
+const LinkButton: React.FC<MenuButtonProps> = ({
 	content,
 	link = null,
 }: MenuButtonProps) => {
@@ -27,4 +27,4 @@ const MenuButton: React.FC<MenuButtonProps> = ({
 	);
 };
 
-export default MenuButton;
+export default LinkButton;
