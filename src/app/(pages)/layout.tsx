@@ -18,7 +18,7 @@ export default function RootLayout({
 			<body className="min-w-[360px] font-pretendard flex flex-col bg-gray-100 gap-10">
 				<Header />
 				<MenuSelection />
-				<section className="xl:p-6 gap-4 max-md:w-full md:mx-auto max-w-screen-xl">
+				<section className="xl:p-6 gap-4 flex max-md:w-full  md:mx-auto max-w-screen-xl">
 					{children}
 				</section>
 				<Footer />
