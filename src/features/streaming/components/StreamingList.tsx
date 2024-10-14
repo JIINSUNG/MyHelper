@@ -18,13 +18,18 @@ type infoType = {
 const StreamingList: React.FC<StreamingListProps> = ({ className }) => {
 	const searchParams = useSearchParams();
 	const id = searchParams?.get('id') ?? '';
-	const [streamingInfo, setStreamingInfo] = useState<Movie>();
-	const [countries, setCountries] = useState<infoType[]>([]);
+	const [streamingInfo, setStreamingInfo] = useState<Movie | null>();
+	const [countries, setCountries] = useState<infoType[] | []>([]);
 	const [isDetail, setIsDetail] = useState<number>(-1);
 	const [isFetching, setIsFetching] = useState<boolean>(false);
 
 	useEffect(() => {
-		if (!id) return;
+		if (!id) {
+			setStreamingInfo(null);
+			setCountries([]);
+			return;
+		}
+
 		setIsFetching(true);
 		const fetchingInfo = async () => {
 			const data = await getStreamingInfo(id);
