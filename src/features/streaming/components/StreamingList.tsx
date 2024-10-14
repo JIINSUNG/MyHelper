@@ -42,6 +42,8 @@ const StreamingList: React.FC<StreamingListProps> = ({ className }) => {
 	function getNetflixCountries(
 		streamingOptions: Record<string, StreamingOption[]>,
 	): { country: string; options: StreamingOption[] }[] {
+		if (!streamingOptions) return;
+
 		return Object.entries(streamingOptions)
 			.map(([country, options]: [string, StreamingOption[]]) => ({
 				country,
@@ -75,11 +77,11 @@ const StreamingList: React.FC<StreamingListProps> = ({ className }) => {
 			<h1 className="font-bold text-center">
 				{!streamingInfo
 					? '영화 선택 후 검색 버튼을 눌러 주세요'
-					: countries.length > 0
+					: countries && countries.length > 0
 						? '시청 가능 국가'
 						: '시청 가능 국가가 없습니다.'}
 			</h1>
-			{countries.length > 0 && (
+			{countries && countries.length > 0 && (
 				<ul className="flex flex-col w-full gap-2">
 					{countries.map((country: infoType, idx) => (
 						<li
