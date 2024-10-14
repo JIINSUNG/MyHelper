@@ -5,10 +5,10 @@ export async function GET(
 	{ params }: { params: { id: string } },
 ) {
 	const id = params.id;
-	const api_key = process.env.STREAMING_API_KEY;
-	const host = process.env.STREAMING_API_HOST;
+	const API_KEY = process.env.STREAMING_API_KEY;
+	const HOST = process.env.STREAMING_API_HOST;
 
-	if (!id || !api_key || !host) {
+	if (!id || !API_KEY || !HOST) {
 		return NextResponse.json(
 			{ message: '형식이 알맞지 않습니다' },
 			{
@@ -23,14 +23,28 @@ export async function GET(
 		const response = await fetch(url, {
 			method: 'GET',
 			headers: {
-				'x-rapidapi-key': api_key as string,
-				'x-rapidapi-host': host as string,
+				'x-rapidapi-key': API_KEY,
+				'x-rapidapi-host': HOST,
 			},
 		});
+
 		const result = await response.json();
 
+		if (!result) {
+			return NextResponse.json(
+				{ data: null, status: 204, message: '데이터가 존재하지 않습니다' },
+				{ status: 200 },
+			);
+		}
+
 		return NextResponse.json({ data: result }, { status: 200 });
-	} catch (e) {
-		return NextResponse.json({ message: e }, { status: 401 });
+	} catch (e: unknown) {
+		if (e instanceof Error) {
+			return NextResponse.json({ message: e.message }, { status: 401 });
+		}
+		return NextResponse.json(
+			{ message: 'Unknown error occurred' },
+			{ status: 500 },
+		);
 	}
 }

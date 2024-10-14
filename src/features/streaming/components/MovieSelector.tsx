@@ -7,6 +7,7 @@ import { useDebounce } from '@/shared/hooks';
 import { MovieType } from '@/features/streaming/components/MovieCard';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/shared/component';
+import Swal from 'sweetalert2';
 
 export type MovieSelectorProps = {
 	className?: string;
@@ -21,14 +22,25 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 	const debouncedQuery = useDebounce(query, 500);
 
 	const getMovieList = async (query: string) => {
-		const response = await fetch(
-			`${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie?query=${query}&api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}&language=ko-KR`,
-		).then((response) => response.json());
+		const response = await fetch(`/api/tmdb/${query}`).then((response) =>
+			response.json(),
+		);
 
-		setMovieList(response.results);
+		if (response.status === 204) {
+			Swal.fire({
+				title: '영화가 존재하지 않습니다',
+				text: response.message,
+				icon: 'info',
+			});
+		}
+
+		if (response.status === 200) {
+			setMovieList(response.data);
+		}
 	};
 
 	useEffect(() => {
+		setMovieList([]);
 		if (!debouncedQuery) return;
 
 		getMovieList(debouncedQuery);
@@ -42,6 +54,7 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 	const handleRemove = () => {
 		setMovie(null);
 		setMovieList([]);
+		router.push(`/streaming`);
 	};
 
 	return (
@@ -73,7 +86,6 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 						/>
 					))}
 				</div>
-				{/* TODO: 스트리밍 검색 API 연결 */}
 				{movie && (
 					<div className="flex flex-col w-[60px] gap-2">
 						<Button onClick={() => handleSearch()} label="검색" />
