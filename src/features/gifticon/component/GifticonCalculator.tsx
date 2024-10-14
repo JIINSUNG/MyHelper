@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { usePriceContext } from '@/app/context/PriceContext';
+import { Input, InputContainer } from '@/shared/component';
 
 export type GifticonCalculatorProps = {
 	className?: string;
@@ -55,67 +56,57 @@ const GifticonCalculator: React.FC<GifticonCalculatorProps> = ({
 			className={`flex max-md:flex-wrap w-full border-b border-black ${className}`}
 		>
 			<div className="flex flex-col w-full max-md:items-center gap-2 p-4">
-				<div>
-					<label className="flex gap-2">
-						깊티 금액
-						<input
-							type="number"
-							className="border border-black rounded-md"
-							onChange={handleGifticonPriceChange}
-						/>
-					</label>
-				</div>
+				<InputContainer>
+					<Input
+						label="깊티 금액"
+						type="number"
+						onChange={handleGifticonPriceChange}
+					/>
+				</InputContainer>
 				<div>
 					<div className="flex flex-col ml-2 gap-1">
-						<div className="flex gap-2">
-							<label className="flex gap-2">
-								<input
-									type="radio"
-									name="option"
-									checked={mode === 0}
-									onChange={handleModeChange(0)}
-								/>
-								할인율
-							</label>
-							<input
+						<InputContainer>
+							<Input
+								labelRight="할인율"
+								type="radio"
+								name="option"
+								checked={mode === 0}
+								onChange={handleModeChange(0)}
+							/>
+							<Input
+								labelRight="%"
 								type="number"
 								min="0"
 								max="100"
-								className="border border-black rounded-md"
 								onChange={handleRateChange}
 								disabled={mode !== 0}
 							/>
-							%
-						</div>
-						<div className="flex gap-2">
-							<label className="flex gap-2">
-								<input
-									type="radio"
-									name="option"
-									checked={mode === 1}
-									onChange={handleModeChange(1)}
-								/>
-								할인가격
-							</label>
-							<input
+						</InputContainer>
+						<InputContainer>
+							<Input
+								labelRight="할인가격"
+								type="radio"
+								name="option"
+								checked={mode === 1}
+								onChange={handleModeChange(1)}
+							/>
+							<Input
+								labelRight="원"
 								type="number"
-								className="border border-black rounded-md"
+								name="option"
 								onChange={handlePriceChange}
 								disabled={mode !== 1}
 							/>
-							원
-						</div>
-						<div className="flex gap-2">
-							<label className="flex gap-2">
-								<input
-									type="radio"
-									name="option"
-									checked={mode === 2}
-									onChange={handleModeChange(2)}
-								/>
-								60% 환불
-							</label>
-						</div>
+						</InputContainer>
+						<InputContainer>
+							<Input
+								labelRight="60% 환불"
+								type="radio"
+								name="option"
+								checked={mode === 2}
+								onChange={handleModeChange(2)}
+							/>
+						</InputContainer>
 					</div>
 				</div>
 			</div>
@@ -123,12 +114,9 @@ const GifticonCalculator: React.FC<GifticonCalculatorProps> = ({
 			<div className="flex flex-col w-full gap-2 p-4 max-md:p-2">
 				<div className="flex flex-col w-full">
 					<div className="flex max-md:justify-center">
-						<div className="flex items-center gap-2">
-							<p>최소 결제 금액</p>
-							<div className="border border-black rounded-md px-4 py-2">
-								{minPrice}
-							</div>
-						</div>
+						<InputContainer>
+							<Input label="최소 결제 금액" disabled={true} value={minPrice} />
+						</InputContainer>
 					</div>
 				</div>
 			</div>
