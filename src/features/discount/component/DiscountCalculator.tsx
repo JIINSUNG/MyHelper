@@ -9,7 +9,7 @@ const DiscountCalculator: React.FC = () => {
 	const [isRate, setIsRate] = useState<boolean>(true);
 
 	useEffect(() => {
-		if (originalPrice <= 0 || isNaN(originalPrice)) return;
+		if (originalPrice < 0 || isNaN(originalPrice)) return;
 
 		if (isRate) {
 			const calculatedRate = (
@@ -21,7 +21,7 @@ const DiscountCalculator: React.FC = () => {
 			const calculatedDiscountPrice = (originalPrice * rate) / 100;
 			setDiscountPrice(calculatedDiscountPrice);
 		}
-	}, [originalPrice, rate, discountPrice]);
+	}, [isRate, originalPrice, rate, discountPrice]);
 
 	useEffect(() => {
 		setRate(0);
