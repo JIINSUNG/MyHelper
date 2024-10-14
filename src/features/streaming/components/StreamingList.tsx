@@ -42,7 +42,9 @@ const StreamingList: React.FC<StreamingListProps> = ({ className }) => {
 	function getNetflixCountries(
 		streamingOptions: Record<string, StreamingOption[]>,
 	): { country: string; options: StreamingOption[] }[] {
-		if (!streamingOptions) return;
+		if (!streamingOptions || Object.keys(streamingOptions).length === 0) {
+			return [];
+		}
 
 		return Object.entries(streamingOptions)
 			.map(([country, options]: [string, StreamingOption[]]) => ({
