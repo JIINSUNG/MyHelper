@@ -28,8 +28,8 @@ const DiscountCalculator: React.FC = () => {
 		setDiscountPrice(0);
 	}, [isRate]);
 	return (
-		<section className="flex w-full max-md:flex-wrap gap-2">
-			<div className="flex w-full justify-center items-center gap-4">
+		<section className="flex w-full justify-center max-md:flex-wrap gap-4">
+			<div className="flex justify-center items-center gap-4">
 				<InputContainer>
 					<Input
 						labelRight="할인 율"
@@ -49,28 +49,32 @@ const DiscountCalculator: React.FC = () => {
 			</div>
 
 			{isRate ? (
-				<div className="flex flex-col w-full items-center gap-1">
+				<div className="flex flex-col items-center gap-1">
 					<h2 className="font-bold py-4">할인율 계산기</h2>
-					<InputContainer className="flex-col">
+					<InputContainer className="flex-col items-start">
 						<Input
+							labelClassName="w-full justify-between"
 							label="정가"
 							type="number"
 							onChange={(e) => setOriginalPrice(parseFloat(e.target.value))}
 							value={originalPrice}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="결제한 금액"
 							type="number"
 							onChange={(e) => setDiscountPrice(parseFloat(e.target.value))}
 							value={discountPrice}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="할인 받은 금액"
 							type="number"
 							disabled={true}
 							value={originalPrice - discountPrice}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="할인 율 (%)"
 							type="number"
 							disabled={true}
@@ -79,28 +83,32 @@ const DiscountCalculator: React.FC = () => {
 					</InputContainer>
 				</div>
 			) : (
-				<div className="flex flex-col w-full items-center gap-1">
+				<div className="flex flex-col items-center gap-1">
 					<h2 className="font-bold  py-4">할인 가격 계산기</h2>
-					<InputContainer className="flex-col">
+					<InputContainer className="flex-col items-start">
 						<Input
+							labelClassName="w-full justify-between"
 							label="정가"
 							type="number"
 							onChange={(e) => setOriginalPrice(parseFloat(e.target.value))}
 							value={originalPrice}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="할인 율 (%)"
 							type="number"
 							onChange={(e) => setRate(parseFloat(e.target.value))}
 							value={rate}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="할인 금액"
 							type="number"
 							disabled={true}
 							value={discountPrice.toFixed(0)}
 						/>
 						<Input
+							labelClassName="w-full justify-between"
 							label="결제 금액"
 							type="number"
 							disabled={true}

@@ -64,7 +64,7 @@ const GifticonCalculator: React.FC<GifticonCalculatorProps> = ({
 					/>
 				</InputContainer>
 				<div>
-					<div className="flex flex-col ml-2 gap-1">
+					<div className="flex flex-col gap-1">
 						<InputContainer>
 							<Input
 								labelRight="할인율"
