@@ -1,6 +1,6 @@
 {
   "name": "help-me",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@channel.io/channel-web-sdk-loader": "^2.0.0",
     "dayjs": "^1.11.13",
     "next": "14.2.15",
     "react": "^18",
