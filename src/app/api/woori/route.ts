@@ -3,15 +3,14 @@ import { data } from '@/entities/woori';
 export async function GET(req: NextRequest) {
 	const { searchParams } = req.nextUrl;
 
-	const brand = searchParams.get('brand') ?? '애슐리';
-	const region = searchParams.get('region');
-	const name = searchParams.get('name');
+	const brand = searchParams.get('brand') || '애슐리';
+	const region = searchParams.get('region') || '';
+	const name = searchParams.get('name') || '';
 
 	const filteredData = data.filter((brands) => {
-		const matchesBrandAndRegion =
-			region === 'All' || !region
-				? brands.brand === brand
-				: brands.brand === brand && brands.region === region;
+		const matchesBrandAndRegion = !region
+			? brands.brand === brand
+			: brands.brand === brand && brands.region === region;
 
 		if (name) {
 			return matchesBrandAndRegion && brands.name.includes(name);

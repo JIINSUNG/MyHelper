@@ -1,42 +1,15 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { BrandCard } from '@/features/woori';
 import { useWooriContext } from '@/app/context/WooriContext';
-import { itemType } from '@/entities/woori';
 import { useDebounce } from '@/shared/hooks';
+import { useGetWoori } from '@/entities/woori/query/query';
 
-const BrandList: React.FC = () => {
+const BrandList = () => {
 	const { brand, region, name } = useWooriContext();
-	const [dataList, setDataList] = useState<itemType[]>([]);
-	const [isLoading, setIsLoading] = useState(false);
-
 	const debouncedName = useDebounce(name, 500);
-	const getData = async () => {
-		const searchParams = new URLSearchParams();
-		searchParams.set('brand', brand);
-		if (region) searchParams.set('region', region);
-		if (debouncedName) searchParams.set('name', debouncedName);
-		const response = await fetch(
-			`${process.env.NEXT_PUBLIC_BASE_URL}/api/woori?${searchParams.toString()}`,
-		).then((response) => response.json());
 
-		return response.data;
-	};
-
-	useEffect(() => {
-		const fetchData = async () => {
-			setIsLoading(true);
-			const data = await getData();
-			setDataList(data);
-			setIsLoading(false);
-		};
-
-		fetchData();
-	}, [debouncedName, brand, region]);
-
-	if (isLoading) {
-		return <div className="text-center">데이터 로딩중...</div>;
-	}
+	const { data: dataList } = useGetWoori(brand, region, debouncedName);
 
 	return (
 		<div className="flex flex-col gap-4 min-w-[320px] px-4">

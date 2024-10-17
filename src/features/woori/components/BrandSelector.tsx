@@ -6,7 +6,7 @@ import { useWooriContext } from '@/app/context/WooriContext';
 const BrandSelector = () => {
 	const { brand, setBrand, setRegion, setName } = useWooriContext();
 	useEffect(() => {
-		setRegion(null);
+		setRegion('');
 		setName('');
 	}, [setName, setRegion, brand]);
 	return (
