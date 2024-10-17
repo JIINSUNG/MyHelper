@@ -6,5 +6,6 @@ declare namespace NodeJS {
 		STREAMING_BASE_URL: string;
 		STREAMING_API_HOST: string;
 		NEXT_PUBLIC_BASE_URL: string;
+		NEXT_PUBLIC_CHANNEL_TALK_KEY: string;
 	}
 }
