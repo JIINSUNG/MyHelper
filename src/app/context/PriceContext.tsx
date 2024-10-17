@@ -2,10 +2,10 @@
 
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-interface PriceContextType {
+type PriceContextType = {
 	minPrice: number;
 	setMinPrice: React.Dispatch<React.SetStateAction<number>>;
-}
+};
 
 const PriceContext = createContext<PriceContextType | undefined>(undefined);
 

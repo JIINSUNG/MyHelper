@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
 }) => {
 	if (label || labelRight) {
 		return (
-			<label className={twMerge('flex gap-2', labelClassName)}>
+			<label className={twMerge('flex items-center gap-2', labelClassName)}>
 				{label && <span>{label}</span>}
 				<input
 					className={twMerge(
