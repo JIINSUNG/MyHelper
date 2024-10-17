@@ -17,7 +17,7 @@ const BrandList: React.FC = () => {
 		if (region) searchParams.set('region', region);
 		if (debouncedName) searchParams.set('name', debouncedName);
 		const response = await fetch(
-			`http://localhost:3000/api/woori?${searchParams.toString()}`,
+			`${process.env.NEXT_PUBLIC_BASE_URL}/api/woori?${searchParams.toString()}`,
 		).then((response) => response.json());
 
 		return response.data;
