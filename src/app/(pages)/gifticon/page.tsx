@@ -1,5 +1,5 @@
 import React from 'react';
-import GifticonPage from '@/pages/gifticon/GifticonPage';
+import GifticonPage from '@/_pages/gifticon/GifticonPage';
 
 const page: React.FC = () => {
 	return <GifticonPage />;

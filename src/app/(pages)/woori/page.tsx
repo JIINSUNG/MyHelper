@@ -1,5 +1,5 @@
 import React from 'react';
-import WooriPage from '@/pages/woori/WooriPage';
+import WooriPage from '@/_pages/woori/WooriPage';
 
 const page: React.FC = () => {
 	return <WooriPage />;

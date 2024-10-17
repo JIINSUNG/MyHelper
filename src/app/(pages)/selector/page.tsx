@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectPage from '@/pages/selector/SelectPage';
+import SelectPage from '@/_pages/selector/SelectPage';
 
 const page: React.FC = () => {
 	return <SelectPage />;

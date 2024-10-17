@@ -1,5 +1,5 @@
 import React from 'react';
-import AjegagPage from '@/pages/ajegag/AjegagPage';
+import AjegagPage from '@/_pages/ajegag/AjegagPage';
 
 const page: React.FC = () => {
 	return <AjegagPage />;

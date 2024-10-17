@@ -1,5 +1,5 @@
 import React from 'react';
-import AnniversaryPage from '@/pages/anniversary/AnniversaryPage';
+import AnniversaryPage from '@/_pages/anniversary/AnniversaryPage';
 
 const page: React.FC = () => {
 	return <AnniversaryPage />;
