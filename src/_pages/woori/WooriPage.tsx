@@ -11,13 +11,17 @@ import {
 	HydrationBoundary,
 	QueryClient,
 } from '@tanstack/react-query';
-import { getData } from '@/entities/woori/api/api';
+import { data } from '@/entities/woori';
+
+const getData = (brand: string) => {
+	return data.filter((brands) => brands.brand === brand);
+};
 
 export default async function WooriPage() {
 	const queryClient = new QueryClient();
 	await queryClient.prefetchQuery({
 		queryKey: ['Woori', '애슐리', '', ''],
-		queryFn: () => getData('애슐리', '', ''),
+		queryFn: () => getData('애슐리'),
 	});
 
 	return (
