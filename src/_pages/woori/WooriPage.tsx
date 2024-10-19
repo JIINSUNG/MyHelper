@@ -22,6 +22,7 @@ export default async function WooriPage() {
 	await queryClient.prefetchQuery({
 		queryKey: ['Woori', '애슐리', '', ''],
 		queryFn: () => getData('애슐리'),
+		staleTime: 1000 * 60 * 5, // 1000ms(1s) * 60 * 5 : 5분간 캐싱
 	});
 
 	return (
