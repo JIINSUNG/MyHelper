@@ -23,7 +23,7 @@ export type MovieType = {
 export type MovieCardProps = {
 	className?: string;
 	movie: MovieType;
-	onClick: () => void;
+	onClick?: () => void;
 };
 
 const MovieCard: React.FC<MovieCardProps> = ({ className, movie, onClick }) => {

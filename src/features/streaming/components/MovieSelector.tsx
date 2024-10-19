@@ -48,7 +48,13 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 						</div>
 					)}
 					{isLoading ? (
-						<MovieLoadingCard />
+						<div className="flex flex-col">
+							{Array.from({ length: 5 }).map((_, i) => (
+								<MovieLoadingCard key={i} />
+							))}
+						</div>
+					) : movie ? (
+						<MovieCard className="cursor-pointer" movie={movie} />
 					) : (
 						movieList?.map((movie, idx) => (
 							<MovieCard
