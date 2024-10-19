@@ -11,6 +11,11 @@ export type Genre = {
 	name: string;
 };
 
+export type infoType = {
+	country: string;
+	options: StreamingOption[];
+};
+
 export type Service = {
 	id: string;
 	name: string;
