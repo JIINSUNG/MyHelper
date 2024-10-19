@@ -33,7 +33,7 @@ const MovieSelector: React.FC<MovieSelectorProps> = ({ className }) => {
 	return (
 		<section className={twMerge('flex flex-col', className)}>
 			<div className="flex items-start gap-2">
-				<div className="flex flex-col w-[300px]">
+				<div className="flex flex-col w-[340px]">
 					{!movie ? (
 						<input
 							type="text"
