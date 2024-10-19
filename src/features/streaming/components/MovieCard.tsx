@@ -30,7 +30,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ className, movie, onClick }) => {
 	return (
 		<div
 			className={twMerge(
-				'flex w-full border border-black rounded-md p-2 bg-white',
+				'flex items-center w-full border border-black rounded-md p-2 bg-white',
 				className,
 			)}
 			onClick={onClick}
