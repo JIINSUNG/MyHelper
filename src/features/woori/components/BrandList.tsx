@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { BrandCard } from '@/features/woori';
+import { BrandCard, BrandLoadingCard } from '@/features/woori';
 import { useWooriContext } from '@/app/context/WooriContext';
 import { useGetWoori } from '@/entities/woori/query/query';
 import { useDebounce } from '@/shared/hooks';
@@ -9,7 +9,20 @@ import { useDebounce } from '@/shared/hooks';
 const BrandList = () => {
 	const { brand, region, name } = useWooriContext();
 	const debouncedName = useDebounce(name, 500);
-	const { data: dataList } = useGetWoori(brand, region, debouncedName);
+	const { data: dataList, isLoading } = useGetWoori(
+		brand,
+		region,
+		debouncedName,
+	);
+
+	if (isLoading)
+		return (
+			<div className="flex flex-col w-full gap-2">
+				{Array.from({ length: 5 }, (_, index) => (
+					<BrandLoadingCard key={index} />
+				))}
+			</div>
+		);
 
 	return (
 		<div className="flex flex-col gap-4 min-w-[320px] px-4">
