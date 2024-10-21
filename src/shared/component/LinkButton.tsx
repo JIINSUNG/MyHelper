@@ -18,7 +18,7 @@ const LinkButton: React.FC<MenuButtonProps> = ({
 	return (
 		<button
 			className={twMerge(
-				'border border-black px-2 py-1 rounded-md shadow-sm cursor-pointer',
+				'border border-black px-2 py-1 rounded-md shadow-sm cursor-pointer active:opacity-50',
 				segment === link && 'bg-slateBlue text-white',
 			)}
 		>

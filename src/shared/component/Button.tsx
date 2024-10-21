@@ -54,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
 				SizeStyle[size],
 				ColorStyle[color],
 				ShapeStyle[shape],
-				'whitespace-nowrap',
+				'whitespace-nowrap active:opacity-50',
 				className,
 			)}
 			onClick={isLoading ? undefined : onClick}
