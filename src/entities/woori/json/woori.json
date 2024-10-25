@@ -49,7 +49,7 @@
   {"brand":"애슐리","name":"퀸즈 과천점 (10/18 오픈)","tel":"10/18 오픈","address":"경기도 과천시 과천대로7가길20 프리즘스퀘어 1층","region":"경기","discount":null,"etc":null},
   {"brand":"애슐리","name":"퀸즈 뉴코아 광명점","tel":"0507-1431-1789","address":"경기 광명시 하안로287번길 8, 뉴코아 광명점 7층","region":"경기","discount":false,"etc":null},
   {"brand":"애슐리","name":"퀸즈 다산점","tel":"0507-1367-9965","address":"경기 남양주시 다산순환로 20, 다산현대프리미어캠퍼스몰 A동 2층 16호","region":"경기","discount":true,"etc":null},
-  {"brand":"애슐리","name":"퀸즈 더타운몰 킨텍스점","tel":"0507-1370-2398","address":"경기도 고양시 일산서구 킨텍스로 171 1층 애슐리","region":"경기","discount":null,"etc":null},
+  {"brand":"애슐리","name":"퀸즈 더타운몰 킨텍스점","tel":"0507-1370-2398","address":"경기도 고양시 일산서구 킨텍스로 171 1층 애슐리","region":"경기","discount":true,"etc":null},
   {"brand":"애슐리","name":"퀸즈 레이크꼬모 동탄점","tel":"0507-1352-2368","address":"경기도 화성시 동탄대로 181 레이크꼬모 동탄 지하1층 B101호","region":"경기","discount":true,"etc":null},
   {"brand":"애슐리","name":"퀸즈 롯데아울렛 기흥점","tel":"0507-1322-6376","address":"경기도 용인시 기흥구 신고매로 124 롯데프리미엄아울렛 기흥점 2층","region":"경기","discount":false,"etc":null},
   {"brand":"애슐리","name":"퀸즈 미사점","tel":"0507-1389-5798","address":"경기 하남시 미사강변동로 100-1, 미사파라곤스퀘어 지하1층 (Mall 1, Gate 1 방향)","region":"경기","discount":true,"etc":null},
