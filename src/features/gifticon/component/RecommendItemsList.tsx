@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 import { usePriceContext } from '@/app/context/PriceContext';
 import { InputModal, Input } from '@/shared/component/';
 import { Button } from '@/shared/component';
-
-type Item = {
-	name: string;
-	price: number;
-	quantity: number;
-};
+import { useFormHandler } from '@/shared/hooks/useFormHandler';
 
 type Combination = {
 	total: number;
@@ -20,27 +15,10 @@ type Combination = {
 
 const RecommendItemsList: React.FC = () => {
 	const { minPrice } = usePriceContext();
-	const [itemList, setItemList] = useState<Item[]>([]);
-	const [editMode, setEditMode] = useState<boolean>(false);
 	const [recommendList, setRecommendList] = useState<Combination[]>([]);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const form = new FormData(e.currentTarget);
-		const name = form.get('name') as string | null;
-		const price = form.get('price') as string | null;
-		const quantity = form.get('quantity') as string | null;
-
-		if (!name || !price || !quantity) return;
-
-		setItemList((prev) => [
-			...prev,
-			{ name, price: parseInt(price), quantity: parseInt(quantity) },
-		]);
-
-		setEditMode(false);
-		e.currentTarget.reset();
-	};
+	const { itemList, editMode, setEditMode, setItemList, handleSubmit } =
+		useFormHandler();
 
 	const handleCalculate = () => {
 		const combinations: Combination[] = [];
