@@ -26,7 +26,7 @@ export default async function WooriPage() {
 	});
 
 	return (
-		<main className="flex flex-col w-full gap-4">
+		<main className="flex flex-col w-full gap-4 animate-slideUp">
 			<WooriContextProvider>
 				<h1 className="text-2xl font-bold text-center">우리 V 카드 헬퍼</h1>
 				<section className="flex w-full flex-col gap-4">

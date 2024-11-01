@@ -12,6 +12,15 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			keyframes: {
+				slideUp: {
+					'0%': { transform: 'translateY(40px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
+				},
+			},
+			animation: {
+				slideUp: 'slideUp 0.5s ease-out forwards',
+			},
 			colors: {
 				background: 'var(--background)',
 				foreground: 'var(--foreground)',
@@ -27,6 +36,7 @@ const config: Config = {
 			perspective: {
 				'1000': '1000px',
 			},
+			appear: {},
 		},
 	},
 	plugins: [],
