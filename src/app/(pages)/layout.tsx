@@ -5,10 +5,12 @@ import { Footer, Header, MenuSelection } from '@/widgets';
 import { ReactNode } from 'react';
 import { ChannelTalk } from '@/shared/channelTalk';
 import RQProvider from '@/app/ReactQuery/RQProvider';
-
 export const metadata: Metadata = {
-	title: 'Help Me',
+	title: 'My Helper',
 	description: 'My Helper Site',
+	icons: {
+		icon: '/Logo/Logo.png',
+	},
 };
 
 export default function RootLayout({
