@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
 	return (
@@ -6,6 +7,15 @@ const Footer: React.FC = () => {
 			<div>
 				<span className="block md:inline">&copy; 2024. JIINSUNG.</span>
 				<span className="block md:inline"> all rights reserved.</span>
+				<div className="mx-auto relative w-[200px] h-[40px]">
+					<Image
+						src="/Logo/Logo2.png"
+						alt="Logo"
+						className="w-full h-full object-cover"
+						width={500}
+						height={500}
+					/>
+				</div>
 			</div>
 		</footer>
 	);
