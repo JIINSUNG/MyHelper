@@ -109,9 +109,9 @@ const RecommendItemsList: React.FC = () => {
 										}
 									}}
 								>
-									<p className="w-1/3">{item.name}</p>
-									<p className="w-1/3">{item.price}</p>
-									<p className="w-1/3">{item.quantity}</p>
+									<span className="w-1/3 truncate">{item.name}</span>
+									<span className="w-1/3 truncate">{item.price}</span>
+									<span className="w-1/3 truncate">{item.quantity}</span>
 								</div>
 							))}
 						</td>
