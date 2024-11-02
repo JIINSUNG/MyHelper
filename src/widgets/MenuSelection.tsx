@@ -17,6 +17,11 @@ const MenuSelection: React.FC = () => {
 					</Link>
 				</li>
 				<li>
+					<Link href="/benefit">
+						<LinkButton content="혜택 헬퍼" link="benefit" />
+					</Link>
+				</li>
+				<li>
 					<Link href="/budget">
 						<LinkButton content="예산 헬퍼" link="budget" />
 					</Link>
