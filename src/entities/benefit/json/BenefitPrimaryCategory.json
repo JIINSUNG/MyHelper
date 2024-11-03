@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"type": "생일",
+		"image": "/Images/birthday.jpeg"
+	},
+	{
+		"id": 2,
+		"type": "기념일",
+		"image": "/Images/anniversary.jpeg"
+	},
+	{
+		"id": 3,
+		"type": "꿀팁",
+		"image": "/Images/secret.jpeg"
+	}
+]

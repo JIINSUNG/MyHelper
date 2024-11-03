@@ -1,0 +1,32 @@
+[
+	{
+		"pid": 1,
+		"id": 1,
+		"type": "음식",
+		"image": "/Images/food.jpeg"
+	},
+	{
+		"pid": 1,
+		"id": 2,
+		"type": "엔터테인먼트",
+		"image": "/Images/entertain.jpeg"
+	},
+	{
+		"pid": 1,
+		"id": 3,
+		"type": "쇼핑",
+		"image": "/Images/shopping.jpeg"
+	},
+	{
+		"pid": 1,
+		"id": 4,
+		"type": "여행",
+		"image": "/Images/travel.jpeg"
+	},
+	{
+		"pid": 1,
+		"id": 5,
+		"type": "웰니스",
+		"image": "/Images/wellness.jpeg"
+	}
+]
