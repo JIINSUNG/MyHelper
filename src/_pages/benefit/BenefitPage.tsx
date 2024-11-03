@@ -1,10 +1,23 @@
 import React from 'react';
+import { MainCategory } from '@/features/benefit/components';
+import {
+	dehydrate,
+	HydrationBoundary,
+	QueryClient,
+} from '@tanstack/react-query';
+import { getMainCategory } from '@/entities/benefit/api/api';
+const page: React.FC = async () => {
+	const queryClient = new QueryClient();
 
-const page: React.FC = () => {
+	await queryClient.prefetchQuery({
+		queryKey: ['benefitMainCategory'],
+		queryFn: () => getMainCategory(),
+	});
+
 	return (
-		<main className="flex flex-col w-full items-center gap-4 animate-slideUp">
-			<h1 className="text-2xl font-bold">혜택 헬퍼</h1>
-		</main>
+		<HydrationBoundary state={dehydrate(queryClient)}>
+			<MainCategory />
+		</HydrationBoundary>
 	);
 };
 
