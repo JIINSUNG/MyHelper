@@ -1,18 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import data from '@/entities/benefit/json/BenefitSubSubCategory.json';
+import data from '@/entities/benefit/json/BenefitData.json';
+import { BenefitDataType } from '@/entities/benefit/type';
 
 export async function GET(req: NextRequest) {
 	const { searchParams } = req.nextUrl;
 	const pid = searchParams.get('pid');
+	const brandId = searchParams.get('brandId');
 
-	if (!pid)
+	if (!pid || !brandId)
 		return NextResponse.json(
 			{ message: '옳바르지 않은 요청입니다' },
 			{ status: 400 },
 		);
 
-	const filteredData = data.filter(
-		(category) => category.pid === parseInt(pid),
+	const filteredData: BenefitDataType[] = (data as BenefitDataType[]).filter(
+		(benefit) =>
+			benefit.category1 === pid && benefit.brandId === parseInt(brandId),
 	);
 
 	if (!filteredData) {
