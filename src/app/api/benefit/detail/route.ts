@@ -1,24 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import data from '@/entities/benefit/json/BenefitData.json';
-
-export type BenefitDataType = {
-	category1: string;
-	category2: string;
-	category3: string;
-	brandId: number;
-	id: number;
-	image: string;
-	name: string;
-	benefitTitle: string;
-	benefitDescription: string;
-	benefitImage: string | null;
-	expiration: string;
-	condition: string;
-	conditionDescription: string;
-	HowGet: string;
-	LINK: string;
-	ETC: string | null;
-};
+import { BenefitDataType } from '@/entities/benefit/type';
 
 export async function GET(req: NextRequest) {
 	const { searchParams } = req.nextUrl;
