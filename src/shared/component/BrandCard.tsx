@@ -8,13 +8,13 @@ export type BrandCardProps = {
 
 export const BrandCard: React.FC<BrandCardProps> = ({ src, alt }) => {
 	return (
-		<div className="flex justify-center">
+		<div className="relative flex w-full m-5 rounded-lg bg-white max-w-[340px] justify-center ">
 			<Image
 				src={src}
 				alt={alt}
 				width={500}
 				height={500}
-				className="aspect-video rounded-lg m-10"
+				className="object-contain aspect-video rounded-lg m-5"
 			/>
 		</div>
 	);
