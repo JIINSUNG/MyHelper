@@ -32,7 +32,7 @@ export type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 		| 'frenchGray'
 		| 'linen'
 		| 'warn';
-	onClick: () => void;
+	onClick?: () => void;
 	isLoading?: boolean;
 	label: string;
 	shape?: 'square' | 'circle';
