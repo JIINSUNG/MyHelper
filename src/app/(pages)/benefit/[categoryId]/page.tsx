@@ -5,7 +5,7 @@ import {
 	QueryClient,
 } from '@tanstack/react-query';
 import { getSubCategory } from '@/entities/benefit/api/api';
-import SubCategory from '@/features/benefit/components/SubCategory';
+import { SubCategory } from '@/features/benefit/components';
 
 type pageParams = {
 	params: {

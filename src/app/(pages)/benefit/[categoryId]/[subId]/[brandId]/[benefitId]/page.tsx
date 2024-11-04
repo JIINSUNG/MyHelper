@@ -4,26 +4,28 @@ import {
 	HydrationBoundary,
 	QueryClient,
 } from '@tanstack/react-query';
-import { getBenefitList } from '@/entities/benefit/api/api';
-import { BenefitList } from '@/features/benefit/components';
+import { BenefitDetail } from '@/features/benefit/components';
+import { getBenefitDetail } from '@/entities/benefit/api/api';
 
 type pageParams = {
 	params: {
 		categoryId: string;
 		subId: string;
+		brandId: string;
+		benefitId: string;
 	};
 };
 
 const page: React.FC<pageParams> = async ({ params }) => {
 	const queryClient = new QueryClient();
 	await queryClient.prefetchQuery({
-		queryKey: ['benefitList', params.categoryId, params.subId],
-		queryFn: () => getBenefitList(params.categoryId, params.subId),
+		queryKey: ['benefitDetail', params.categoryId, params.benefitId],
+		queryFn: () => getBenefitDetail(params.categoryId, params.benefitId),
 	});
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<BenefitList pid={params.categoryId} sid={params.subId} />
+			<BenefitDetail pid={params.categoryId} benefitId={params.benefitId} />
 		</HydrationBoundary>
 	);
 };
