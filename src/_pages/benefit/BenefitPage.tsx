@@ -6,7 +6,7 @@ import {
 	QueryClient,
 } from '@tanstack/react-query';
 import { getMainCategory } from '@/entities/benefit/api/api';
-const page: React.FC = async () => {
+const BenefitPage: React.FC = async () => {
 	const queryClient = new QueryClient();
 
 	await queryClient.prefetchQuery({
@@ -21,4 +21,4 @@ const page: React.FC = async () => {
 	);
 };
 
-export default page;
+export default BenefitPage;
