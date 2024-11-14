@@ -12,6 +12,7 @@ import {
 	QueryClient,
 } from '@tanstack/react-query';
 import { data } from '@/entities/woori';
+import { PageHeader } from '@/widgets';
 
 const getData = (brand: string) => {
 	return data.filter((brands) => brands.brand === brand);
@@ -22,14 +23,17 @@ export default async function WooriPage() {
 	await queryClient.prefetchQuery({
 		queryKey: ['Woori', '애슐리', '', ''],
 		queryFn: () => getData('애슐리'),
-		staleTime: 1000 * 60 * 5, // 1000ms(1s) * 60 * 5 : 5분간 캐싱
+		staleTime: 1000 * 60 * 5,
 	});
 
 	return (
-		<main className="flex flex-col w-full gap-4 animate-slideUp">
+		<main className="flex flex-col w-full gap-4">
 			<WooriContextProvider>
-				<h1 className="text-2xl font-bold text-center">우리 V 카드 헬퍼</h1>
-				<section className="flex w-full flex-col gap-4">
+				<PageHeader
+					title="우리V 카드 헬퍼"
+					content="우리카드 헬퍼를 통해 우리v카드로 어떤 애슐리 지점에서 할인 혜택을0 받을 수 있는지  조회 가능합니다"
+				/>
+				<section className="flex w-full  flex-col gap-4 animate-slideUp">
 					<BrandSelector />
 					<RegionSelector />
 					<NameSelector />
