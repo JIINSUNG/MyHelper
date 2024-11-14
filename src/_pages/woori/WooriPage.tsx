@@ -31,7 +31,7 @@ export default async function WooriPage() {
 			<WooriContextProvider>
 				<PageHeader
 					title="우리V 카드 헬퍼"
-					content="우리카드 헬퍼를 통해 우리v카드로 어떤 애슐리 지점에서 할인 혜택을0 받을 수 있는지  조회 가능합니다"
+					content="우리카드 헬퍼를 통해 우리v카드로 어떤 애슐리 지점에서 할인 혜택을 받을 수 있는지  조회 가능합니다"
 				/>
 				<section className="flex w-full  flex-col gap-4 animate-slideUp">
 					<BrandSelector />
