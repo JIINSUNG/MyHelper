@@ -19,7 +19,7 @@ const config: Config = {
 				},
 			},
 			animation: {
-				slideUp: 'slideUp 0.5s ease-out forwards',
+				slideUp: 'slideUp 0.3s ease-in-out',
 			},
 			colors: {
 				background: 'var(--background)',
